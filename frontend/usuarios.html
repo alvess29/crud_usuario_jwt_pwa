@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111827">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="stylesheet" href="/style.css">
+  <title>Painel | Médicos e Pacientes</title>
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <strong>Médicos e Pacientes</strong>
+      <span id="tipoUsuario" class="topbar-subtitle"></span>
+    </div>
+    <button class="secondary small" onclick="logout()">Sair</button>
+  </header>
+
+  <main class="dashboard">
+    <section class="hero">
+      <div>
+        <span class="eyebrow">Área protegida</span>
+        <h1 id="boasVindas"></h1>
+        <p id="descricaoLista"></p>
+      </div>
+      <button class="primary action-button" onclick="listarUsuarios()">Atualizar lista</button>
+    </section>
+
+    <section class="grid-dashboard">
+      <section class="card">
+        <h2>Meu perfil</h2>
+
+        <label for="nomePerfil">Nome</label>
+        <input id="nomePerfil">
+
+        <label for="emailPerfil">E-mail</label>
+        <input id="emailPerfil" disabled>
+
+        <label for="senhaPerfil">Nova senha</label>
+        <input id="senhaPerfil" type="password" placeholder="Deixe em branco para manter">
+
+        <div id="perfilMedico" class="hidden">
+          <label for="crmPerfil">CRM</label>
+          <input id="crmPerfil" disabled>
+
+          <label for="especialidadePerfil">Especialidade</label>
+          <input id="especialidadePerfil">
+        </div>
+
+        <div id="perfilPaciente" class="hidden">
+          <label for="cpfPerfil">CPF</label>
+          <input id="cpfPerfil" disabled>
+
+          <label for="nascimentoPerfil">Data de nascimento</label>
+          <input id="nascimentoPerfil" type="date">
+        </div>
+
+        <button class="primary" onclick="salvarPerfil()">Salvar alterações</button>
+        <button class="danger" onclick="excluirConta()">Excluir minha conta</button>
+        <p id="statusPerfil" class="message"></p>
+      </section>
+
+      <section class="card users-card">
+        <div class="section-title">
+          <div>
+            <h2 id="tituloLista"></h2>
+            <p class="muted">Dados carregados pela API protegida.</p>
+          </div>
+        </div>
+
+        <div id="usuarios" class="user-list"></div>
+      </section>
+    </section>
+  </main>
+
+  <script src="/usuarios.js"></script>
+</body>
+</html>
