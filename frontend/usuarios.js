@@ -1,4 +1,4 @@
-const api = '/api'
+const api = 'https://crud-usuario-jwt-pwa.onrender.com/api'
 const token = localStorage.getItem('token')
 const usuario = JSON.parse(localStorage.getItem('usuario') || 'null')
 

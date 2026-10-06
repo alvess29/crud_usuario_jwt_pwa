@@ -1,4 +1,4 @@
-const api = '/api'
+const api = 'https://crud-usuario-jwt-pwa.onrender.com/api'
 
 function trocarPerfil() {
   const medico = document.getElementById('roleCadastro').value === 'medico'
